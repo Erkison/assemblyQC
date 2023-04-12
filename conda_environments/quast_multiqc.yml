@@ -1,0 +1,10 @@
+name: quast_multiqc
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  # - bioconda::quast=4.6.3
+  - bioconda::multiqc=1.14
+  - pip:
+    - quast==5.2.0
