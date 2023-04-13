@@ -6,7 +6,6 @@ workflow QC {
 
     main: 
         QUAST(assemblies_ch)
-        QUAST.out.quast_dir.collect().view()
         MULTIQC(QUAST.out.quast_dir.collect())
 
     emit:
