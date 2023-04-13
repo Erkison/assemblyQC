@@ -1,5 +1,8 @@
 process QUAST {
     tag { sample_id }
+    time '1h'
+    cpus 1
+    memory { 4.GB * task.attempt }
         
     publishDir "${params.output_dir}/quast",
         mode: 'copy',
@@ -25,6 +28,7 @@ process QUAST {
 
 process MULTIQC {
     tag { 'multiqc for quast' }
+    cpus 8
     memory { 4.GB * task.attempt }
 
     publishDir "${params.output_dir}/multiqc",
